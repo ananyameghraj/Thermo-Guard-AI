@@ -16,7 +16,7 @@ from typing import Optional, List, Dict, Any
 load_dotenv()
 
 # Read environment variables
-NASA_FIRMS_MAP_KEY = os.getenv("NASA_FIRMS_MAP_KEY", "").strip()
+NASA_FIRMS_MAP_KEY = os.getenv("NASA_FIRMS_MAP_KEY", "5848f96987827148f9145834c8226d66").strip()
 MODEL_PATH = os.getenv("MODEL_PATH", os.path.join(os.path.dirname(__file__), "best.pt"))
 
 app = FastAPI(title="ThermoGuard AI API", version="1.0.0")
