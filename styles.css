@@ -1,0 +1,123 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ThermoGuard AI design system — dark command-center palette.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-risk-high: var(--risk-high);
+  --color-risk-medium: var(--risk-medium);
+  --color-risk-low: var(--risk-low);
+  --color-fire: var(--fire);
+  --color-smoke: var(--smoke);
+  --color-facility: var(--facility);
+  --color-emergency: var(--emergency);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.17 0.015 250);
+  --foreground: oklch(0.95 0.008 250);
+  --surface: oklch(0.22 0.018 250);
+  --surface-foreground: oklch(0.95 0.008 250);
+  --card: oklch(0.215 0.018 250);
+  --card-foreground: oklch(0.95 0.008 250);
+  --popover: oklch(0.225 0.018 250);
+  --popover-foreground: oklch(0.95 0.008 250);
+  --primary: oklch(0.72 0.17 55);
+  --primary-foreground: oklch(0.18 0.02 60);
+  --secondary: oklch(0.28 0.02 250);
+  --secondary-foreground: oklch(0.93 0.008 250);
+  --muted: oklch(0.26 0.018 250);
+  --muted-foreground: oklch(0.68 0.02 250);
+  --accent: oklch(0.65 0.13 220);
+  --accent-foreground: oklch(0.15 0.02 250);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.97 0.01 250);
+  --border: oklch(0.32 0.02 250);
+  --input: oklch(0.3 0.02 250);
+  --ring: oklch(0.72 0.17 55);
+  --risk-high: oklch(0.63 0.22 27);
+  --risk-medium: oklch(0.78 0.16 80);
+  --risk-low: oklch(0.72 0.14 160);
+  --fire: oklch(0.7 0.2 40);
+  --smoke: oklch(0.72 0.03 250);
+  --facility: oklch(0.7 0.13 220);
+  --emergency: oklch(0.72 0.16 300);
+  --chart-1: oklch(0.7 0.2 40);
+  --chart-2: oklch(0.65 0.13 220);
+  --chart-3: oklch(0.78 0.16 80);
+  --chart-4: oklch(0.72 0.14 160);
+  --chart-5: oklch(0.72 0.16 300);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility panel {
+  background-color: color-mix(in oklch, var(--surface) 78%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+@utility label-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+/* OpenLayers base */
+.ol-viewport canvas {
+  filter: saturate(0.75) brightness(0.92);
+}
