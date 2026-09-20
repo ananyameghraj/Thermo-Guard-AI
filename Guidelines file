@@ -1,0 +1,66 @@
+ThermoGuard AI — How to Run and Test
+ThermoGuard AI is an AI-based industrial fire detection system that uses satellite fire data and a YOLO-based AI model to identify possible fire and smoke events.
+1. Requirements
+Install:
+Python 3.10+
+Node.js 18+
+Git
+A modern web browser
+2. Download the Project
+Clone the GitHub repository:
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd Thermo-Guard-AI
+3. Set Up the Backend
+Open a terminal inside the project folder:
+cd backend
+pip install -r requirements.txt
+Add the AI model
+Place the trained best.pt file inside:
+backend/
+└── best.pt
+The trained model file is required for AI image detection.
+Add NASA FIRMS API Key
+Create:
+backend/.env
+Add:
+NASA_FIRMS_MAP_KEY=YOUR_NASA_FIRMS_KEY
+Each user should use their own NASA FIRMS key.
+4. Start the Backend
+Inside the backend folder:
+uvicorn main:app --reload
+The backend will normally run at:
+http://127.0.0.1:8000
+Open this in a browser to check that the API is running.
+5. Set Up the Frontend
+Open another terminal and go back to the main project folder:
+cd ..
+npm install
+Create a file:
+.env
+Add:
+VITE_API_URL=http://127.0.0.1:8000
+VITE_DEMO_MODE=false
+6. Start the Frontend
+Run:
+npm run dev
+Open the URL shown in the terminal, usually:
+http://localhost:5173
+7. How to Test ThermoGuard AI
+🔥 AI Image Detection
+Open AI Analysis.
+Upload a suitable fire/smoke image.
+Provide the location if required.
+Start the analysis.
+The AI model detects Fire / Smoke / No Detection.
+The system displays the detection confidence and prototype risk level.
+🛰️ Satellite Monitoring
+Open Satellite Monitoring.
+View available NASA FIRMS fire observations.
+Check fire locations on the map.
+Select an incident to view its information.
+🗺️ Fire Map
+Open Fire Map to view detected incidents and their locations geographically.
+🚨 Alerts
+Open Alerts to view fire events classified by the prototype risk rules.
+📜 History
+Open History to view previous detection results.
